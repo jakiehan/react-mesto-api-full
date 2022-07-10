@@ -9,11 +9,17 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 const login = (req, res, next) => {
   const { email, password } = req.body;
 
+  if (!email || !password) {
+    throw new BadRequest('поле email или пароль не может быть пустым');
+  }
+
   return User.findUserByCredentials(email, password)
     .then((user) => {
+      const { name, avatar } = user;
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-mesto', { expiresIn: '7d' });
-
-      res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: true }).send({ message: 'Авторизация прошла успешно!' });
+      return res.send({
+        name, email, avatar, token,
+      });
     })
     .catch(next);
 };
