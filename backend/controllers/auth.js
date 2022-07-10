@@ -14,7 +14,7 @@ const login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-mesto', { expiresIn: '7d' });
 
       res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: true }).send({ message: 'Авторизация прошла успешно!' });
-      res.cookie('loggedIn', true);
+      res.cookie('loggedIn', true, { httpOnly: false });
     })
     .catch(next);
 };
