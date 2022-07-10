@@ -10,13 +10,14 @@ const NotFound = require('./errors/NotFound');
 require('dotenv').config();
 
 const { login, createUser } = require('./controllers/auth');
+
 const auth = require('./middlewares/auth');
 const { handleErrors } = require('./middlewares/errors');
 const limiter = require('./middlewares/rateLimit');
+const cors = require('./middlewares/cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { codeStatus, regex } = require('./utils/constants');
-
-const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { INTERNAL_SERVER_ERROR } = codeStatus;
 const { REG } = regex;
@@ -26,6 +27,7 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors);
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
