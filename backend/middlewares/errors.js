@@ -27,7 +27,7 @@ const checkUserOrCard = (res, userOrCard) => {
   if (!userOrCard) {
     throw new NotFound('Not Found');
   }
-  return res.send({ data: userOrCard });
+  return res.send(userOrCard);
 };
 
 const handleDeleteCard = (card, id) => {
