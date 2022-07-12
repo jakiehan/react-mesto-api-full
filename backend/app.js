@@ -26,12 +26,18 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors);
 app.use(cookieParser());
-app.use(helmet());
 app.use(limiter);
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
@@ -66,6 +72,7 @@ app.use(errors());
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   const error = handleErrors(err);
+  console.log(`ошибка ${error}`);
   const { statusCode = INTERNAL_SERVER_ERROR, message } = error;
   res.status(statusCode).send({ message: statusCode === INTERNAL_SERVER_ERROR ? 'На сервере произошла ошибка' : message });
 });

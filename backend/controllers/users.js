@@ -10,18 +10,14 @@ const getUsers = (req, res, next) => {
 const getUser = (req, res, next) => {
   const { userId } = req.params;
   User.findById(userId)
-    .then((user) => {
-      checkUserOrCard(res, user);
-    })
+    .then((user) => checkUserOrCard(res, user))
     .catch(next);
 };
 
 const currentUser = (req, res, next) => {
   const { _id } = req.user;
   User.findById(_id)
-    .then((user) => {
-      checkUserOrCard(res, user);
-    })
+    .then((user) => checkUserOrCard(res, user))
     .catch(next);
 };
 
@@ -31,9 +27,7 @@ const setUserInfo = (req, res, next) => {
     new: true,
     runValidators: true,
   })
-    .then((user) => {
-      checkUserOrCard(res, user);
-    })
+    .then((user) => checkUserOrCard(res, user))
     .catch(next);
 };
 
@@ -43,9 +37,7 @@ const setUserAvatar = (req, res, next) => {
     new: true,
     runValidators: true,
   })
-    .then((user) => {
-      checkUserOrCard(res, user);
-    })
+    .then((user) => checkUserOrCard(res, user))
     .catch(next);
 };
 
