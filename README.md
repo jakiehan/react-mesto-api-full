@@ -3,6 +3,6 @@
   
 Ссылки:  
 
-https://api.mesto-jaki.nomorepartiesxyz.ru  бэк
+https://api.mesto-jaki.nomorepartiesxyz.ru  backend
 
-https://mesto-jaki.nomorepartiesxyz.ru  фронт
+https://mesto-jaki.nomorepartiesxyz.ru  frontend
