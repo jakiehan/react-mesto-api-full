@@ -1,0 +1,10 @@
+.photo-card__image-title {
+  max-width: calc(100% - 62px);
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 0 0 20px;
+}

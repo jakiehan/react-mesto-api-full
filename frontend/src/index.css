@@ -1,0 +1,80 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/inter.css);
+@import url(./blocks/app/app.css);
+
+/*Header*/
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__data/header__data.css);
+@import url(./blocks/header/__email-user/header__email-user.css);
+
+/*Content*/
+@import url(./blocks/content/content.css);
+
+/*Profile*/
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__avatar-edit/profile__avatar-edit.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__info-wrapper/profile__info-wrapper.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__rank/profile__rank.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+
+/*Gallery*/
+@import url(./blocks/gallery/gallery.css);
+@import url(./blocks/gallery/__elements/gallery__elements.css);
+@import url(./blocks/photo-card/photo-card.css);
+@import url(./blocks/photo-card/__image/photo-card__image.css);
+@import url(./blocks/photo-card/__trash/photo-card__trash.css);
+@import url(./blocks/photo-card/__info/photo-card__info.css);
+@import url(./blocks/photo-card/__image-title/photo-card__image-title.css);
+@import url(./blocks/photo-card/__image-like-wrapper/photo-card__image-like-wrapper.css);
+@import url(./blocks/photo-card/__image-like/photo-card__image-like.css);
+@import url(./blocks/photo-card/__image-like/_active/photo-card__image-like_active.css);
+@import url(./blocks/photo-card/__image-like-count/photo-card__image-like-count.css);
+
+/*Footer*/
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+/*Popup*/
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_viewing-photo/popup_viewing-photo.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__title/popup__title.css);
+@import url(./blocks/popup/__wrapper/popup__wrapper.css);
+@import url(./blocks/popup/__close-btn/popup__close-btn.css);
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__viewing-form/popup__viewing-form.css);
+@import url(./blocks/popup/__image-title/popup__image-title.css);
+@import url(./blocks/popup/__icon/popup__icon.css);
+@import url(./blocks/popup/__title/_position/popup__title_position_center.css);
+
+/*Form*/
+@import url(blocks/form/form.css);
+@import url(blocks/form/_margin/form_margin_top.css);
+@import url(blocks/form/__link-redirect/form__link-redirect.css);
+@import url(blocks/form/__input-info/form__input-info.css);
+@import url(blocks/form/__field/form__field.css);
+@import url(blocks/form/__title/form__title.css);
+@import url(blocks/form/__title/_type/form__title_type_auth.css);
+@import url(blocks/form/__field/_type/form__field_type_auth.css);
+@import url(blocks/form/__field/_type/form__field_type_error.css);
+@import url(blocks/form/__input-wrapper/form__input-wrapper.css);
+@import url(blocks/form/__validation-error/form__validation-error.css);
+@import url(blocks/form/__btn-s/form__btn-s.css);
+@import url(blocks/form/__btn-s/_position/form__btn-s_position_center.css);
+@import url(blocks/form/__btn-s/_type/form__btn-s_type-auth.css);
+@import url(blocks/form/__btn-s/_atr/form__btn-s_atr_disabled.css);
+
+
+@import url(./blocks/transparency-button/transparency-button.css);
+@import url(./blocks/transparency-button/_opacity/transparency-button_opacity_more.css);
+@import url(./blocks/transparency-button/_opacity/transparency-button_opacity_less.css);
+
+
+

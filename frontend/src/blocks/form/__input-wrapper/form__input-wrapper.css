@@ -1,0 +1,15 @@
+.form__input-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form__input-wrapper:last-of-type {
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 934px) {
+  .form__input-wrapper:last-of-type {
+    margin-bottom: 45px;
+  }
+}

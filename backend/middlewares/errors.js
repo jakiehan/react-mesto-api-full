@@ -4,7 +4,11 @@ const Unauthorized = require('../errors/Unauthorized');
 const Forbidden = require('../errors/Forbidden');
 const Conflict = require('../errors/Conflict');
 
-const handleErrors = (err) => {
+const { codeStatus } = require('../utils/constants');
+
+const { INTERNAL_SERVER_ERROR } = codeStatus;
+
+const handleTypeError = (err) => {
   switch (err.name) {
     case 'NotFound':
       return new NotFound(`Запрашиваемый ресурс не найден: ${err.message}`);
@@ -40,8 +44,15 @@ const handleDeleteCard = (card, id) => {
   return card;
 };
 
+const handleError = ((err, req, res, next) => {
+  const error = handleTypeError(err);
+  const { statusCode = INTERNAL_SERVER_ERROR, message } = error;
+  res.status(statusCode).send({ message: statusCode === INTERNAL_SERVER_ERROR ? 'На сервере произошла ошибка' : message });
+  next();
+});
+
 module.exports = {
-  handleErrors,
   checkUserOrCard,
   handleDeleteCard,
+  handleError,
 };

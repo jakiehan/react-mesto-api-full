@@ -1,0 +1,15 @@
+.form__link-redirect {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 934px) {
+  .form__link-redirect {
+    margin-top: 20px;
+  }
+}

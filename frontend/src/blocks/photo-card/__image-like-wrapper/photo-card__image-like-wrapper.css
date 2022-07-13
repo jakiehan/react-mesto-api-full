@@ -1,0 +1,6 @@
+.photo-card__image-like-wrapper {
+  display: grid;
+  grid-template-rows: 20px 13px;
+  gap: 3px;
+  margin-right: 20px;
+}

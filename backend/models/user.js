@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
+const validator = require('validator');
 const Unauthorized = require('../errors/Unauthorized');
 
 const userSchema = mongoose.Schema({
@@ -18,6 +19,10 @@ const userSchema = mongoose.Schema({
   avatar: {
     type: String,
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    validate: {
+      validator: (s) => validator.isURL(s),
+      message: 'Некорректный URL',
+    },
   },
   email: {
     type: String,
@@ -27,7 +32,6 @@ const userSchema = mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: [8, 'минимальная длина пароля 8 символов'],
     select: false,
   },
 }, { versionKey: false });

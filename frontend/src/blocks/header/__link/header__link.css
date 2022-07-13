@@ -1,0 +1,15 @@
+.header__link {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #A9A9A9;
+}
+
+@media screen and (max-width: 934px) {
+  .header__link {
+    margin-right: 27px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

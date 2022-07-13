@@ -1,17 +1,12 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
-const BadRequest = require('../errors/BadRequest');
 const Conflict = require('../errors/Conflict');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-
-  if (!email || !password) {
-    throw new BadRequest('поле email или пароль не может быть пустым');
-  }
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -28,10 +23,6 @@ const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
   } = req.body;
-
-  if (!email || !password) {
-    throw new BadRequest('поле email или пароль не может быть пустым');
-  }
 
   User.findOne({ email })
     .then((user) => {

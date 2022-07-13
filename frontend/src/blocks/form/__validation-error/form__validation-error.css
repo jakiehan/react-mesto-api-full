@@ -1,0 +1,11 @@
+.form__validation-error {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: normal;
+  color: #FF0000;
+  display: block;
+  max-width: 358px;
+  position: absolute;
+  top: 29px;
+  left: 0;
+}

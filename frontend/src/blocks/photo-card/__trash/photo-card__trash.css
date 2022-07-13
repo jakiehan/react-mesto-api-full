@@ -1,0 +1,14 @@
+.photo-card__trash {
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/trash-button.svg);
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
