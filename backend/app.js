@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
 const routes = require('./routes/index');
-require('dotenv').config();
+require('dotenv').config({ path: '/home/jakiehan/.env' });
 
 const { handleError } = require('./middlewares/errors');
 const limiter = require('./middlewares/rateLimit');
