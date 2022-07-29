@@ -7,6 +7,7 @@ module.exports.codeStatus = {
   CONFLICT: 409,
 };
 
-module.exports.regex = {
-  REG: /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/,
+module.exports.devConfig = {
+  MONGODB_URL_DEV: 'mongodb://localhost:27017/mestodbdev',
+  JWT_SECRET_DEV: 'dev-secret-mesto',
 };

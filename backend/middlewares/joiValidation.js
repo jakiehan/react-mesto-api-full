@@ -1,8 +1,13 @@
 const { celebrate, Joi } = require('celebrate');
 
-const { regex } = require('../utils/constants');
+const validator = require('validator');
 
-const { REG } = regex;
+const checkUrl = (url, msg) => {
+  if (validator.isURL(url)) {
+    return url;
+  }
+  return msg.message('Передан некорректный URL');
+};
 
 const signin = celebrate({
   body: Joi.object().keys({
@@ -15,7 +20,7 @@ const signup = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(REG),
+    avatar: Joi.string().custom(((value, helpers) => checkUrl(value, helpers))),
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
@@ -36,14 +41,14 @@ const meUser = celebrate({
 
 const avatarUser = celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().pattern(REG),
+    avatar: Joi.string().custom(((value, helpers) => checkUrl(value, helpers))),
   }),
 });
 
 const cards = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    link: Joi.string().pattern(REG).required(),
+    link: Joi.string().required().custom(((value, helpers) => checkUrl(value, helpers))),
   }),
 });
 
